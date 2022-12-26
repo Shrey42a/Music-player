@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg1 {
+  background: url("https://images.wallpaperscraft.com/image/single/gramophone_player_vinyl_102795_1920x1080.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.glass {
+  backdrop-filter: blur(4px) saturate(101%);
+  -webkit-backdrop-filter: blur(4px) saturate(101%);
+  background-color: rgba(15, 253, 222, 0.06);
+  border-radius: 10px;
+}
+
+.glass3 {
+  backdrop-filter: blur(4px) saturate(101%);
+  -webkit-backdrop-filter: blur(4px) saturate(101%);
+  background-color: rgba(8, 169, 244, 0.08);
+  box-shadow: 0px 0px 5px #292626,
+    inset 0px 0px 5px #101010;
+}
+
+.glass2 {
+  backdrop-filter: blur(7px) saturate(101%);
+  -webkit-backdrop-filter: blur(7px) saturate(101%);
+  background-color: rgba(241, 248, 247, 0.06);
+}
+
+.btn {
+  box-shadow: 3px 3px 5px #292626,
+    -3px -3px 5px #070505;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  backdrop-filter: blur(7px) saturate(101%);
+  width: 80%;
+  height: 10px;
+  background: rgba(240, 235, 232, 0.304);
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  backdrop-filter: blur(7px) saturate(101%);
+  border-radius: 50%;
+  background: rgba(3, 253, 237, 0.2);
+  cursor: pointer;
+  box-shadow: inset 2px 1px 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
