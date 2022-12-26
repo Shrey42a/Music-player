@@ -26,7 +26,7 @@ import imgSrc25 from "./Artwork/10.jpg";
 
 import Alone from "./Music/Alone.mp3";
 import Angetenar from "./Music/Angetenar.mp3";
-import Are_you_okay from "./Music/Are_You_Okay.mp3";
+import Are_you_okay from "./Music/Are_you_okay.mp3";
 import Primal from "./Music/Primal.mp3";
 import Cradles from "./Music/Cradles.mp3";
 import Stranger from "./Music/Stranger.mp3";
