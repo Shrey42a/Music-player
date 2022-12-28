@@ -104,29 +104,27 @@ function App({ tracks }) {
             <div className="lg:w-1/2 bx rounded-2xl overflow-hidden md:w-1/2 p-2 md:h-full mt-2 lg:mt-0 w-3/4 h-2/3 lg:h-full">
               <img src={image} className="h-full rounded-2xl w-full transition ease-in-out hover:scale-110" />
             </div>
-            <div className="ml-2 lg:ml-2 md:ml-0 lg:w-1/2 items-start items-center lg:items-start md:items-start flex lg:pt-2 md:pt-2 flex-col lg:space-y-4 md:w-1/2 md:h-full w-full h-1/3 lg:h-full">
+            <div className="ml-2 lg:ml-2 md:ml-0 mt-4 lg:mt-0 lg:w-1/2 items-start items-center lg:items-start md:items-start flex lg:pt-2 md:pt-2 flex-col lg:space-y-4 md:w-1/2 md:h-full w-full h-1/3 lg:h-full">
               <h1 className="text-xl flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Title:</span> {title}</h1>
               <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Artist:</span> {artist}</h1>
               <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Album:</span> {album}</h1>
               <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Track:</span> {track}</h1>
             </div>
           </div>
-          <div className="h-1/3 w-full py-2 pt-8">
-            <div className=" flex items-center justify-center space-x-4 h-2/3 w-full">
+          <div className="h-1/3 flex flex-col w-full py-2 lg:pt-8">
+            <div className="flex-col flex lg:pt-0 md:pt-0 pt-3 md:items-center items-center lg:items-center justify-center h-2/3 w-full">
               <Controls
                 isPlaying={isPlaying}
                 onPrevClick={toPrevTrack}
                 onNextClick={toNextTrack}
                 onPlayPauseClick={setIsPlaying} />
-            </div>
-            <div className=" h-1/3 w-full pt-2 flex justify-center items-center">
               <input
                 value={trackProgress}
                 step="1"
                 min="0"
                 max={duration ? duration : `${duration}`}
                 type="range"
-                className="w-4/5 h-full mt-2"
+                className="w-4/5 h-full mt-5"
                 onChange={(e) => onScrub(e.target.value)}
                 onMouseUp={onScrubEnd}
                 onKeyUp={onScrubEnd} />
