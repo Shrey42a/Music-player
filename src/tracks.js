@@ -54,12 +54,20 @@ import Stalker from "./Music/Stalker.mp3";
 
 export default [
   {
+    title: "Main_woh_chaand",
+    artist: "Darshan_Raval",
+    album: "Woh_Chaand",
+    audioSrc: Main_woh_chaand,
+    image: imgSrc17,
+    track: "1"
+  },
+  {
     title: "Baatein_ye_kabhi_na",
     artist: "Arijit_Singh",
     album: "Alone",
     audioSrc: Baatein_ye_kabhi_na,
     image: imgSrc13,
-    track: "1"
+    track: "1.2"
   },
   {
     title: "Let_the_music_play",
@@ -180,14 +188,6 @@ export default [
     audioSrc: Into_your_arms,
     image: imgSrc15,
     track: "16"
-  },
-  {
-    title: "Main_woh_chaand",
-    artist: "Darshan_Raval",
-    album: "Woh_Chaand",
-    audioSrc: Main_woh_chaand,
-    image: imgSrc17,
-    track: "17"
   },
   {
     title: "La_callin",

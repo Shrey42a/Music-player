@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 .bg1 {
-  background: url("https://images.wallpaperscraft.com/image/single/gramophone_player_vinyl_102795_1920x1080.jpg");
+  background: url("https://images.wallpaperscraft.com/image/single/sky_sunset_birds_114733_5184x3456.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.bx {
+  box-shadow: inset 2px 2px 10px #131212,
+    inset 2px 2px 5px #0e0d0d;
 }
 
 .glass {

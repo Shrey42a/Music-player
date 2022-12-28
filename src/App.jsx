@@ -7,6 +7,7 @@ function App({ tracks }) {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [volume1, setVolume1] = useState(1);
 
   const { title, artist, image, audioSrc, album, track } = tracks[trackIndex];
 
@@ -15,6 +16,13 @@ function App({ tracks }) {
   const isReady = useRef(false);
 
   const { duration } = audioRef.current;
+
+  function setVolume(value) {
+    clearInterval(intervalRef.current);
+    audioRef.current.volume = value / 100;
+    setVolume1(audioRef.current.volume);
+  }
+
 
   const startTimer = () => {
     clearInterval(intervalRef.current);
@@ -89,42 +97,43 @@ function App({ tracks }) {
   return (
     <>
 
-      <div onContextMenu="return false;" class="bg1 space-y-2 lg:px-0 md:px-2 h-screen w-full flex flex-col justify-center items-center">
+      <div className="bg1 space-y-2 lg:px-0 px-2 md:px-2 h-screen w-full flex flex-col justify-center items-center">
         <Navbar />
-        <div onContextMenu="return false;" class="glass shadow-md shadow-zinc-700 h-4/5 mt-1 w-full md:w-4/5 lg:p-2 md:h-4/5 lg:h-4/5 lg:w-1/2">
-          <div onContextMenu="return false;" class="h-2/3 w-full flex md:flex-row lg:flex-row flex-col lg:p-2">
-            <div onContextMenu="return false;" class="lg:w-1/2 md:w-1/2 p-2 md:h-full w-full h-2/3 lg:h-full">
-              <img src={image} class="h-full rounded-2xl w-full shadow-lg transition ease-in-out hover:scale-110 shadow-zinc-900" />
+        <div className="glass shadow-md shadow-zinc-700 h-4/5 mt-1 w-full md:w-4/5 lg:p-2 md:h-4/5 lg:h-4/5 lg:w-1/2">
+          <div className="h-2/3 w-full justify-center items-center flex md:flex-row lg:flex-row flex-col lg:p-2">
+            <div className="lg:w-1/2 bx rounded-2xl overflow-hidden md:w-1/2 p-2 md:h-full mt-2 lg:mt-0 w-1/2 h-2/3 lg:h-full">
+              <img src={image} className="h-full rounded-2xl w-full transition ease-in-out hover:scale-110" />
             </div>
-            <div onContextMenu="return false;" class="ml-2 lg:ml-0 md:ml-0 lg:w-1/2 items-start flex lg:pt-2 md:pt-2 flex-col lg:space-y-4 md:w-1/2 md:h-full w-full h-1/3 lg:h-full">
-              <h1 class="text-xl lg:text-2xl md:text-3xl font-semibold text-zinc-800">Title: {title}</h1>
-              <h1 class="text-xl lg:text-2xl md:text-3xl font-semibold text-zinc-800">Artist: {artist}</h1>
-              <h1 class="text-xl lg:text-2xl md:text-3xl font-semibold text-zinc-800">Album: {album}</h1>
-              <h1 class="text-xl lg:text-2xl md:text-3xl font-semibold text-zinc-800">Track: {track}</h1>
+            <div className="ml-2 lg:ml-2 md:ml-0 lg:w-1/2 items-start items-center lg:items-start md:items-start flex lg:pt-2 md:pt-2 flex-col lg:space-y-4 md:w-1/2 md:h-full w-full h-1/3 lg:h-full">
+              <h1 className="text-xl flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Title:</span> {title}</h1>
+              <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Artist:</span> {artist}</h1>
+              <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Album:</span> {album}</h1>
+              <h1 className="text-md flex lg:text-2xl md:text-3xl font-semibold text-zinc-800"><span className='lg:block hidden'>Track:</span> {track}</h1>
             </div>
           </div>
-          <div onContextMenu="return false;" class="h-1/3 w-full py-2 pt-8">
-            <div onContextMenu="return false;" class=" flex items-center justify-center space-x-4 h-2/3 w-full">
+          <div className="h-1/3 w-full py-2 pt-8">
+            <div className=" flex items-center justify-center space-x-4 h-2/3 w-full">
               <Controls
                 isPlaying={isPlaying}
                 onPrevClick={toPrevTrack}
                 onNextClick={toNextTrack}
                 onPlayPauseClick={setIsPlaying} />
             </div>
-            <div onContextMenu="return false;" class=" h-1/3 w-full pt-2 flex justify-center items-center">
+            <div className=" h-1/3 w-full pt-2 flex justify-center items-center">
               <input
                 value={trackProgress}
                 step="1"
                 min="0"
                 max={duration ? duration : `${duration}`}
                 type="range"
-                class="w-4/5 h-full mt-2"
+                className="w-4/5 h-full mt-2"
                 onChange={(e) => onScrub(e.target.value)}
                 onMouseUp={onScrubEnd}
                 onKeyUp={onScrubEnd} />
             </div>
           </div>
         </div>
+        <input type="range" min="1" max="100" step={0.02} value={volume1} className="volume_slider" onChange={(e) => setVolume(e.target.value)} />
         <Footer />
       </div>
     </>
