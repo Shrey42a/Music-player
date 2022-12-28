@@ -101,7 +101,7 @@ function App({ tracks }) {
         <Navbar />
         <div className="glass shadow-md shadow-zinc-700 h-4/5 mt-1 w-full md:w-4/5 lg:p-2 md:h-4/5 lg:h-4/5 lg:w-1/2">
           <div className="h-2/3 w-full justify-center items-center flex md:flex-row lg:flex-row flex-col lg:p-2">
-            <div className="lg:w-1/2 bx rounded-2xl overflow-hidden md:w-1/2 p-2 md:h-full mt-2 lg:mt-0 w-1/2 h-2/3 lg:h-full">
+            <div className="lg:w-1/2 bx rounded-2xl overflow-hidden md:w-1/2 p-2 md:h-full mt-2 lg:mt-0 w-3/4 h-2/3 lg:h-full">
               <img src={image} className="h-full rounded-2xl w-full transition ease-in-out hover:scale-110" />
             </div>
             <div className="ml-2 lg:ml-2 md:ml-0 lg:w-1/2 items-start items-center lg:items-start md:items-start flex lg:pt-2 md:pt-2 flex-col lg:space-y-4 md:w-1/2 md:h-full w-full h-1/3 lg:h-full">
